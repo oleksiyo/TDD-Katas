@@ -1,0 +1,26 @@
+Create a String indexer with method int[] Index(string input)
+
+return an empty array if the input is null
+return an empty array if the input is empty
+the index array should have the same number of elements as the input
+the index array values should default to 0
+the first value of the index array should always be -1
+the second value of the index array should always be 0
+
+when an input character is one position to the right of a character that is the same as the input character at that character’s corresponding index value then its corresponding index value should be 1 + the index value of the character to its left
+example:
+input = "aab"
+output = [-1,0,1]
+    output[0] is -1 // rule 5
+    output[1] is 0  // rule 6
+    output[2] is 1  // rule 7 because input[2-1] == input[output[2-1]] => input[1] == input[0] => 'a' == 'a'
+example:
+input = "abcabda"
+output = [-1,0,0,0,1,2,0]
+    output[0] is -1 // rule 5
+    output[1] is 0  // rule 6
+    output[2] is 0  // rule 4
+    output[3] is 0  // rule 4
+    output[4] is 1  // rule 7 because input[4-1] == input[output[4-1]] => input[3] == input[0] => 'a' == 'a'
+    output[5] is 2  // rule 7 because input[5-1] == input[output[5-1]] => input[4] == input[1] => 'b' == 'b'
+    output[6] is 0  // rule 4
